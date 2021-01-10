@@ -16,7 +16,7 @@ module.exports.isAuthenticated = async (req, res, next) => {
 		});
 	}
 };
-hashPassword = (password, saltRound) => {
+const hashPassword = (password, saltRound) => {
 	return new Promise((resolve, reject) => {
 		bcrypt.hash(password, saltRound, (err, hash) => {
 			if(err) reject(err);
@@ -49,7 +49,7 @@ module.exports.register = async (req, res, next) => {
 	}
 };
 
-comparePassword = (password, hash) => {
+const comparePassword = (password, hash) => {
 	return new Promise((resolve, reject) => {
 		bcrypt.compare(password, hash, (err, match) => {
 			if (err) reject(err);
