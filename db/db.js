@@ -10,7 +10,8 @@ if(!dbUri) {
 mongoose.connect(dbUri, {
     useNewUrlParser: true,
     useFindAndModify: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useUnifiedTopology: true
 }, err => {
     if(err) {
         console.error(`failed to connect using mongoose ${err}`);
