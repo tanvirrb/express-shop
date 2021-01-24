@@ -1,4 +1,4 @@
-const User = require("../models/User.model");
+const User = require('../models/User.model');
 
 module.exports.createUser = (userInfo) => {
   return User.create(userInfo);

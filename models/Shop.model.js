@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 mongoose.Promise = global.Promise;
 
@@ -24,4 +24,4 @@ const shopSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Shop", shopSchema);
+module.exports = mongoose.model('Shop', shopSchema);

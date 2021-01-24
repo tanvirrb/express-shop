@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const dbUri = process.env.MONGO_URI;
 
 if (!dbUri) {
-  console.error("Mongo url not set in env file");
-  return new Error("Mongo url not set in env file");
+  console.error('Mongo url not set in env file');
+  return new Error('Mongo url not set in env file');
 }
 
 mongoose.connect(
@@ -19,7 +19,7 @@ mongoose.connect(
     if (err) {
       console.error(`failed to connect using mongoose ${err}`);
     } else {
-      console.log("connected to db server");
+      console.log('connected to db server');
     }
   }
 );
