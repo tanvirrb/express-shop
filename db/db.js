@@ -19,7 +19,7 @@ mongoose.connect(
     if (err) {
       console.error(`failed to connect using mongoose ${err}`);
     } else {
-      console.log('connected to db server');
+      console.info('connected to db server');
     }
   }
 );

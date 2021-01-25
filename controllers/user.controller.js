@@ -9,7 +9,7 @@ module.exports.isAuthenticated = async (req, res, next) => {
       req.headers.token,
       process.env.JWT_SECRET
     );
-    console.log('JWTTTTTTTT', verified);
+
     if (!verified) {
       return res.status(400).json({
         error: true,
@@ -38,7 +38,7 @@ const hashPassword = (password, saltRound) => {
   });
 };
 
-module.exports.register = async (req, res, next) => {
+module.exports.register = async (req, res) => {
   try {
     const { body } = req;
     const saltRound = 10;
@@ -83,14 +83,14 @@ const comparePassword = (password, hash) => {
   });
 };
 
-module.exports.login = async (req, res, next) => {
+module.exports.login = async (req, res) => {
   try {
     const user = await userService.findUserByEmail(req.body.email);
     const matchPassword = await comparePassword(
       req.body.password,
       user.password
     );
-    console.log(matchPassword);
+
     if (!matchPassword) {
       return res.status(400).json({
         error: false,

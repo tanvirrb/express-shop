@@ -1,8 +1,7 @@
 const multer = require('multer');
 
-module.exports.fileUpload = (req, res, next) => {
+module.exports.fileUpload = (req, res) => {
   const file = req.file;
-  console.log(file);
   return res.json({ file: `${req.get('host')}/${file.path}` });
 };
 

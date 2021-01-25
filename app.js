@@ -9,7 +9,7 @@ const db = require('./db/db');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const shopsRouter = require('./routes/shops');
-const {isAuthenticated} = require('./controllers/user.controller');
+// const {isAuthenticated} = require('./controllers/user.controller');
 
 const app = express();
 app.use('/public', express.static(path.join(__dirname, 'public')));
